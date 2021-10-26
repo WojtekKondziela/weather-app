@@ -1,0 +1,41 @@
+.form {
+
+    .formGroup {
+
+        .getLocationInput {
+            width: 12rem;
+            color: #ffffff;
+            font-size: 2.5rem;
+            line-height: 4rem;
+            height: 5rem;
+            border: 0;
+            border-radius: 0;
+            border-bottom: .2rem solid #ffffff;
+            background-color: transparent;
+            transition: all 1s ease;
+
+            &::placeholder{
+                position: relative;
+                color: #bdbdbd;
+                transition: all 1s ease;
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+                outline: 0px !important;
+                -webkit-appearance: none;
+                box-shadow: none !important;
+            }
+
+            &:focus,
+            &active{
+                width: 100%;
+
+                &::placeholder{
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
