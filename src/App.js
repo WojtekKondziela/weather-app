@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './app.scss';
 import { Layout } from './components/Layout';
+import { ShowResponse } from './components/ShowResponse';
 import SunIcon from './assets/sun-icon2.png'
 
 
@@ -32,7 +33,7 @@ class App extends Component {
 
         <React.Fragment>
           <Layout>
-            
+            <ShowResponse />
           </Layout>
         </React.Fragment>
 
