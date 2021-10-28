@@ -75,12 +75,13 @@ function App() {
     <React.Fragment>
       <Container className='container'>
         <h1 className='app-main-heading text-center p-5'>Weather App</h1>
-        <div className='form w-100 text-center mb-4'>
+        <div className='form w-100 text-center mb-4 d-flex flex-column align-items-center'>
           <input className='findLocation text-center' type='text' placeholder='where we go now?' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search} />
+          <small className='mt-3'>point of view: Poland</small>
         </div>
         {(typeof weather.main !== 'undefined') ? (
 
-          <div className='weather-table pt-5'>
+          <div className='weather-table pt-3'>
             <div className='temp item-1'>
               <span className='weather-table__item p-3'>
                 <span>{Math.round(weather.main.temp)}&deg;C</span>
