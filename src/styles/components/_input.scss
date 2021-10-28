@@ -1,0 +1,28 @@
+.findLocation{
+    color: #ffffff;
+    border: 0;
+    border-bottom: .2rem solid #ffffff;
+    background: transparent;
+    width: 18rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    transition: all 1s ease;
+
+    &:focus,
+    &:active{
+        outline: none !important;
+        box-shadow: 0 !important;
+        width: 35rem;
+
+        &::placeholder{
+            opacity: 0;
+        }
+    }
+}
+
+::placeholder{
+    color: #ffffff;
+    transition: all 1s ease;
+}
