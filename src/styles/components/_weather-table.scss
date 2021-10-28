@@ -5,11 +5,12 @@
     grid-gap: .5rem;
     grid-template-areas:
         "it2 it1 it1 it4"
-        "it3 it1 it1 it5";
+        "it3 it1 it1 it5"
+        "it6 it7 it8 it9";
 
     .item-1 {
         grid-area: it1;
-        font-size: 8rem;
+        font-size: 6rem;
         
         .weather-table__item{
             min-height: 20.5rem;
@@ -18,22 +19,42 @@
 
     .item-2 {
         grid-area: it2;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .item-3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         grid-area: it3;
     }
 
     .item-4 {
         grid-area: it4;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .item-5 {
         grid-area: it5;
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .item-6 {
+        grid-area: it6;
+        font-size: 1.5rem;
+    }
+
+    .item-7 {
+        grid-area: it7;
+        font-size: 1.5rem;
+    }
+
+    .item-8 {
+        grid-area: it8;
+        font-size: 1.5rem;
+    }
+
+    .item-9 {
+        grid-area: it9;
+        font-size: 1.5rem;
     }
 
     .weather-table__item {
@@ -44,9 +65,26 @@
         height: 10rem;
 
         .icon{
-            font-size: 4rem;
+            width: 3rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
+
+        .country {
+            font-size: 1rem;
+            background-color: transparent;
+        }
+
+        .weather__img{
+            width: 5rem;
+            margin-bottom: -1.5rem;
+        }
+
+        .temp_feels_like{
+            margin-top: -3rem;
+            font-size: 1.3rem;
+        }
+
     }
 
 }
