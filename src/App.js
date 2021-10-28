@@ -48,7 +48,7 @@ function App() {
 
   }
 
-  function convert_UNIX_sunset_to_date(sunset) {
+  function convert_UNIX_to_sunset_date(sunset) {
 
     let date = new Date(sunset * 1000);
     let hours = date.getHours();
@@ -59,7 +59,7 @@ function App() {
 
   }
 
-  function convert_UNIX_sunrise_to_date(sunrise) {
+  function convert_UNIX_to_sunrise_date(sunrise) {
 
     let date = new Date(sunrise * 1000);
     let hours = date.getHours();
@@ -73,7 +73,7 @@ function App() {
   return (
 
     <React.Fragment>
-      <Container>
+      <Container className='container'>
         <h1 className='app-main-heading text-center p-5'>Weather App</h1>
         <div className='form w-100 text-center mb-4'>
           <input className='findLocation text-center' type='text' placeholder='where we go now?' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search} />
@@ -114,7 +114,7 @@ function App() {
             <div className='wind item-6'>
               <span className='weather-table__item p-3'>
                 <img src={sunrise} alt={weather.sys.sunrise} className='icon' />
-                <span>{convert_UNIX_sunrise_to_date(weather.sys.sunrise)}</span>
+                <span>{convert_UNIX_to_sunrise_date(weather.sys.sunrise)}</span>
               </span>
             </div>
             <div className='wind item-7'>
@@ -132,7 +132,7 @@ function App() {
             <div className='wind item-9'>
               <span className='weather-table__item p-3'>
                 <img src={sunset} alt={weather.sys.sunset} className='icon' />
-                <span>{convert_UNIX_sunset_to_date(weather.sys.sunset)}</span>
+                <span>{convert_UNIX_to_sunset_date(weather.sys.sunset)}</span>
               </span>
             </div>
           </div>
