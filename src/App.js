@@ -1,18 +1,47 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import './app.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWind, faCloud, faCalendarDay, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
+const API = {
 
-class App extends Component {
+  key: 'ad5074ba6a2d554164114bed4973ad4d',
+  base: 'https://api.openweathermap.org/data/2.5/',
+  units: 'metric'
 
-  render() {
+}
 
-    const API = {
+function App() {
 
-      key: 'ad5074ba6a2d554164114bed4973ad4d',
-      base: 'https://api.openweathermap.org/data/2.5'
+    const [query, setQuery] = useState('');
+    const [weather, setWeather] = useState({})
+
+    const search = evt => {
+
+      if(evt.key === "Enter") {
+
+        fetch(`${API.base}weather?q=${query}&units=${API.units}&APPID=${API.key}`)
+          .then(res => res.json())
+          .then(result => { 
+
+            setWeather(result)
+            setQuery('')
+            console.log(weather);
+
+          });
+
+      }
+
+    }
+
+    const getDate = (d) => {
+
+      let date = d.getDate();
+      let month = d.getMonth() + 1;
+      let year = d.getFullYear();
+
+      return `${date}.${month}.${year}`;
 
     }
 
@@ -22,7 +51,7 @@ class App extends Component {
         <Container>
           <h1 className='app-main-heading text-center p-5'>Weather App</h1>
           <div className='form w-100 text-center mb-5'>
-            <input className='findLocation text-center' type='text' placeholder='where we go now?' />
+            <input className='findLocation text-center' type='text' placeholder='where we go now?' onChange={e => setQuery(e.target.value)} value={query} onKeyPress={search} />
           </div>
           <div className='weather-table pt-5'>
             <div className='temp item-1'>
@@ -37,7 +66,7 @@ class App extends Component {
             <div className='date item-3'>
               <span className='weather-table__item p-3'>
                 <FontAwesomeIcon icon={faCalendarDay} className='mx-3 icon' />
-                <span>28.10.2021</span>
+                <span>{getDate(new Date())}</span>
               </span>
             </div>
             <div className='weather-icon item-4'>
@@ -59,6 +88,5 @@ class App extends Component {
     )
 
   }
-}
 
 export default App;
