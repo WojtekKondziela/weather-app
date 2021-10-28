@@ -84,7 +84,7 @@ function App() {
             <div className='temp item-1'>
               <span className='weather-table__item p-3'>
                 <span>{Math.round(weather.main.temp)}&deg;C</span>
-                <span className='temp_feels_like'>feels like {Math.round(weather.main.temp)}&deg;C</span>
+                <span className='temp_feels_like'>feels like {Math.round(weather.main.feels_like)}&deg;C</span>
               </span>
             </div>
             <div className='city item-2'>
