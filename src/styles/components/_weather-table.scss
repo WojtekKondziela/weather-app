@@ -10,13 +10,66 @@
             "it2 it1 it1 it4"
             "it3 it1 it1 it5"
             "it6 it7 it8 it9";
+
+        @media only screen and (max-width: 1399px) {
+
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+
+            grid-template-areas: 
+                "it6 it6 it6 it6 it1 it1 it1 it1 it9 it9 it9 it9"
+                "it2 it2 it2 it2 it3 it3 it3 it3 it4 it4 it4 it4"
+                "it5 it5 it5 it5 it7 it7 it7 it7 it8 it8 it8 it8";
+
+        }
+
+        @media only screen and (max-width: 991px) {
+
+            grid-template-columns: 1fr 1fr 1fr 1fr; 
+
+            grid-template-areas: 
+                "it1 it1 it1 it1"
+                "it2 it2 it3 it3"
+                "it4 it4 it5 it5"
+                "it7 it7 it8 it8"
+                "it6 it6 it9 it9";
+
+        }
+
+        @media only screen and (max-width: 767px) {
+
+            grid-template-columns: 1fr;
+
+            grid-template-areas: 
+                "it1"
+                "it2"
+                "it3"
+                "it4"
+                "it5"
+                "it8"
+                "it7"
+                "it6"
+                "it9";
+
+        }
     
         .item-1 {
             grid-area: it1;
             font-size: 6rem;
+
+            @media only screen and (max-width: 1399px) {
+
+                font-size: 4.5rem;
+
+            }
             
             .weather-table__item{
                 min-height: 20.5rem;
+
+                @media only screen and (max-width: 1399px) {
+
+                    min-height: 10rem;
+
+                }
             }
         }
     
@@ -86,6 +139,13 @@
             .temp_feels_like{
                 margin-top: -3rem;
                 font-size: 1.3rem;
+
+                @media only screen and (max-width: 1399px) {
+
+                    margin-top: -1rem;
+                    font-size: 1rem;
+
+                }
             }
     
         }

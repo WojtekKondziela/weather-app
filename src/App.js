@@ -73,7 +73,7 @@ function App() {
           <div className='weather-table pt-3'>
             <div className='temp item-1'>
               <span className='weather-table__item p-3'>
-                <span>{Math.round(weather.main.temp)}&deg;C</span>
+                <span className='actual_temp'>{Math.round(weather.main.temp)}&deg;C</span>
                 <span className='temp_feels_like'>feels like {Math.round(weather.main.feels_like)}&deg;C</span>
               </span>
             </div>
@@ -101,25 +101,25 @@ function App() {
                 <span>{weather.wind.speed} m/s</span>
               </span>
             </div>
-            <div className='wind item-6'>
+            <div className='sunrise item-6'>
               <span className='weather-table__item p-3'>
                 <img src={sunrise} alt={weather.sys.sunrise} className='icon' />
                 <span>{convert_UNIX_to_date(weather.sys.sunrise)}</span>
               </span>
             </div>
-            <div className='wind item-7'>
+            <div className='pressure item-7'>
               <span className='weather-table__item p-3'>
                 <img src={barometer} alt={weather.main.pressure} className='icon' />
                 <span>{weather.main.pressure} hPa</span>
               </span>
             </div>
-            <div className='wind item-8'>
+            <div className='humidity item-8'>
               <span className='weather-table__item p-3'>
                 <FontAwesomeIcon icon={faTint} className='mx-3 icon' />
                 <span>{weather.main.humidity} %</span>
               </span>
             </div>
-            <div className='wind item-9'>
+            <div className='sunset item-9'>
               <span className='weather-table__item p-3'>
                 <img src={sunset} alt={weather.sys.sunset} className='icon' />
                 <span>{convert_UNIX_to_date(weather.sys.sunset)}</span>
