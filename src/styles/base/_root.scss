@@ -6,4 +6,12 @@ body{
     width: 100vw;
     background-image: radial-gradient(#0397b1, #004b58);
     color: #ffffff;
+
+    .root{
+        min-height: 100vh;
+
+        .container{
+            min-height: 100vh;
+        }
+    }
 }

@@ -91,7 +91,7 @@ function App() {
             </div>
             <div className='weather-icon item-4'>
               <span className='weather-table__item p-3'>
-                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt={weather.weather[0].description}  className='weather__img' />
+                <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt={weather.weather[0].description} className='weather__img' />
                 <span>{weather.weather[0].description}</span>
               </span>
             </div>
@@ -127,9 +127,10 @@ function App() {
             </div>
           </div>
 
-        ) : ('')}
+        ) : ( (weather.cod === "404") ? <div className='cityNotFound text-center'>City Not Found</div> : '' )
+        }
 
-        </Container>
+      </Container>
     </React.Fragment>
 
   )
