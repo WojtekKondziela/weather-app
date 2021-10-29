@@ -1,4 +1,10 @@
 .app-main-heading{
     font-family: 'Dancing Script', cursive;
     font-size: 3.5rem;
+
+    @media only screen and (max-width: 382px) {
+
+        font-size: 2.1rem;
+
+    }
 }
