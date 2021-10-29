@@ -48,20 +48,9 @@ function App() {
 
   }
 
-  function convert_UNIX_to_sunset_date(sunset) {
+  function convert_UNIX_to_date(unix) {
 
-    let date = new Date(sunset * 1000);
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let formatedMinutes = (minutes < 10) ? `0${minutes}` : `${minutes}`;
-
-    return `${hours}:${formatedMinutes}`;
-
-  }
-
-  function convert_UNIX_to_sunrise_date(sunrise) {
-
-    let date = new Date(sunrise * 1000);
+    let date = new Date(unix * 1000);
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let formatedMinutes = (minutes < 10) ? `0${minutes}` : `${minutes}`;
@@ -115,7 +104,7 @@ function App() {
             <div className='wind item-6'>
               <span className='weather-table__item p-3'>
                 <img src={sunrise} alt={weather.sys.sunrise} className='icon' />
-                <span>{convert_UNIX_to_sunrise_date(weather.sys.sunrise)}</span>
+                <span>{convert_UNIX_to_date(weather.sys.sunrise)}</span>
               </span>
             </div>
             <div className='wind item-7'>
@@ -133,7 +122,7 @@ function App() {
             <div className='wind item-9'>
               <span className='weather-table__item p-3'>
                 <img src={sunset} alt={weather.sys.sunset} className='icon' />
-                <span>{convert_UNIX_to_sunset_date(weather.sys.sunset)}</span>
+                <span>{convert_UNIX_to_date(weather.sys.sunset)}</span>
               </span>
             </div>
           </div>
